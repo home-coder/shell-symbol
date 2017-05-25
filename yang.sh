@@ -73,6 +73,19 @@ echo "Uptime is $UP"
 PWD=`pwd`
 echo ${PWD}
 
+echo "=============替换符================"
+PWD=`pwd`
+echo "Path1 = ${PWD}"
+PWD2=$(pwd)
+echo "Path2 = ${PWD2}"
+
+STR=$(ls)
+echo ${STR}
+${STR} #是将ls执行后的返回值放到shell下去执行
+echo ls
+echo pwd
+echo haha
+
 echo -e "========拼接./yang.sh 1 3 4 5中的参数=========================\n"
 for var in $*
 do
