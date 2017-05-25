@@ -7,7 +7,7 @@ echo $*
 echo $@
 echo $?
 echo $$
-
+echo "$^ is 不是 特殊字符, Shell 不是 Makefile"
 echo "========================="
 echo "File Name: $0"
 echo "First Parameter : $1"
@@ -80,6 +80,13 @@ do
 done
 echo ${str}
 
+echo "========字符串拼接 2============="
+str1="hello"
+str2="world"
+str3='$#$*'
+str4="${str1}${str2}${str3}"
+echo -e "${str4}\n"
+
 echo "==========单引号，双引号================="
 your_name='qinjx'
 str="Hello, I know your are \"$your_name\"! \n"
@@ -92,3 +99,4 @@ echo "=========再次输出Hello, I know your are "qinjx"!====="
 var='qinjx'
 str="Hello, I know your are \"${var}\"!"
 echo -e ${str}
+
