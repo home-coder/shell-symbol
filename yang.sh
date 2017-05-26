@@ -113,3 +113,45 @@ var='qinjx'
 str="Hello, I know your are \"${var}\"!"
 echo -e ${str}
 
+
+echo "############## + - * / % -lt -gt == -eq -ne -ge -le###################"
+a=10
+b=20
+
+c=`expr ${a} + ${b}`
+echo "a + b = ${c}"
+
+c=$(expr ${a} - ${b})
+echo "a - b = ${c}"
+
+c=`expr $a \* $b`
+echo "a * b = $c"
+
+c=`expr $a / $b`
+echo "a / b = $c"
+
+if [ $a == $b ]; then
+	echo "a = b"
+elif [ $a -gt $b ]; then
+	echo "a > b"
+else
+	echo "a < b"
+fi
+
+if [ $# -lt 2 ]; then
+	echo "too few params"
+	exit
+fi
+m=$1
+n=$2
+if [ $1 -eq $2 ]; then
+	echo "m = n"
+elif [ $1 -le $2 ]; then
+	echo "m <= n"
+elif [ $1 -ge $2 ]; then
+	echo "m >= n"
+elif [ $1 -lt $2 ]; then
+	echo "m < n"
+elif [ $1 -gt $2 ]; then
+	echo "m > n"
+fi
