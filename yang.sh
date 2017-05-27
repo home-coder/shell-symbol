@@ -140,7 +140,7 @@ fi
 
 if [ $# -lt 2 ]; then
 	echo "too few params"
-	exit
+#	exit
 fi
 m=$1
 n=$2
@@ -155,3 +155,17 @@ elif [ $1 -lt $2 ]; then
 elif [ $1 -gt $2 ]; then
 	echo "m > n"
 fi
+
+
+echo ================ # % ==========================
+#	#代表删除从前往后最小匹配的内容
+#
+#	%代表删除从后往前最小匹配的内容
+#!/bin/sh
+dir=`pwd`
+for i in $dir
+do
+	p1=${i#*/}
+	p2=${i%/*}
+done
+echo -e "p1= $p1 \np2= $p2"
